@@ -4,7 +4,7 @@ import styles from './Authentification.module.css'
 import {Registration} from "../Registration/Registration";
 import {useDispatch, useSelector} from "react-redux";
 import {AUTHENTIFICATION_SCREENS} from "../../constants/activeScreen";
-import {Tabs} from "../../components/Tabs/Tabs";
+import {Tabs} from "../Tabs/Tabs";
 
 export const Authentification = () => {
     const [activeScreen, setActiveScreen] = useState(AUTHENTIFICATION_SCREENS.LOGIN);
