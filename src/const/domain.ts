@@ -1,0 +1,1 @@
+export const CURRENT_DOMAIN = 'https://peaceful-scrubland-58603.herokuapp.com';

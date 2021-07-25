@@ -1,0 +1,28 @@
+.button_sigup {
+    width: 160px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--color-dark);
+    border: none;
+    background-color: var(--color-light-green);
+    font-family: 'Roboto', 'sans-serif';
+    cursor: pointer;
+}
+.button_login {
+    width: 157px;
+    height: 28px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+    color: var(--color-dark);
+    border: none;
+    background-color: var(--color-light-green);
+    font-family: 'Roboto', 'sans-serif;';
+    cursor: pointer;
+}
+.button_active {
+    background-color: var(--color-green);
+    color: var(--color-white);
+}

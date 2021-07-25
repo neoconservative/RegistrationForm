@@ -1,0 +1,67 @@
+{
+  "name": "registration-form",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack serve --config webpack.config.js",
+    "watch": "webpack --watch"
+  },
+  "author": "Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.13.13",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^8.1.1",
+    "css-loader": "^5.2.7",
+    "file-loader": "^6.2.0",
+    "mini-css-extract-plugin": "^1.5.0",
+    "postcss-loader": "^6.1.1",
+    "style-loader": "^0.19.1",
+    "ts-loader": "^9.0.2",
+    "webpack": "^5.45.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@types/react-redux": "^7.1.16",
+    "axios": "^0.21.1",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "css-modules": "^0.3.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-spinners": "^0.11.0",
+    "react-text-mask": "^5.4.3",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.3.0",
+    "typescript": "^4.3.5"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": {
+    "production": [
+      "> 1%",
+      "ie 10"
+    ],
+    "development": [
+      "> 1%",
+      "ie 10"
+    ]
+  }
+}

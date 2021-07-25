@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": false,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "target": "es2018",
+    "jsx": "react",
+    "allowJs": true,
+    "plugins": [{
+      "name": "typescript-plugin-css-modules",
+      "options": {
+        "classnameTransform": "dashes",
+        "customMatcher": "\\.m\\.css$",
+        "customRenderer": "./main.js",
+        "dotenvOptions": {},
+        "postCssOptions": {},
+        "rendererOptions": {}
+      }
+    }]
+  }
+}

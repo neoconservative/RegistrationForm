@@ -1,0 +1,96 @@
+.buttons_wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 29px;
+    margin-bottom: 27px;
+}
+.title {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 32px;
+    color: var(--color-light-white);
+    text-align: center;
+    margin-bottom: 27px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form_group {
+    margin-bottom: 21px;
+}
+
+.input_name_block {
+    display: flex;
+    justify-content: center;
+}
+.input_name {
+    width: 146px;
+    height: 35px;
+    background: var(--color-dark-grey);
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: var(--color-dark-blue);
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 6px 0 7px 14px;
+    margin: 0 12px 0 12px;
+}
+.input_name::placeholder {
+    color: var(--color-dark-blue);
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 6px 0 7px 14px;
+}
+
+.input {
+    width: 317px;
+    height: 35px;
+    background: var(--color-dark-grey);
+    border: 1px solid var(--color-white);
+    box-sizing: border-box;
+    border-radius: 6px;
+    color: var(--color-dark-blue);
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 6px 0 7px 14px;
+    margin: 0 12px 0 12px;
+}
+.input::placeholder {
+    color: var(--color-dark-blue);
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    padding: 6px 0 7px 14px;
+}
+.button_getstarted {
+    background-color: var(--color-green);
+    border-radius: 6px;
+    width: 316px;
+    height: 42px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 25px;
+    color: var(--color-light-white);
+    border: none;
+    margin: 21px 0 28px 0;
+}
+.button_getstarted:hover {
+    background-color: var(--color-dark-green);
+}
+.button_getstarted:active {
+    background-color: #49916d;
+}
+
+.loader {
+    height: 42px;
+    display: flex;
+    justify-content: center;
+    margin: 21px 0 28px 0;
+}
