@@ -8,9 +8,8 @@ interface Props {
 }
 
 export const Tabs = (props: Props) => {
-
     return (
-        <div className={styles.buttons_section}>
+        <>
             <button
                 onClick={()=> props.setActiveScreen(AUTHENTIFICATION_SCREENS.REGISTRATION)}
                 className={`${styles.button_sigup} ${props.activeScreen === AUTHENTIFICATION_SCREENS.REGISTRATION ? styles.button_active : ''}`}
@@ -23,6 +22,6 @@ export const Tabs = (props: Props) => {
             >
                 Log In
             </button>
-        </div>
+        </>
     );
 };

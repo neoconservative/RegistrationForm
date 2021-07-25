@@ -23,21 +23,6 @@ export const Login = (props: Props) => {
         dispatch(logIn({email, password}, setErrors));
     }
 
-    function renderButton() {
-        if(isLoading) {
-
-            return (
-                <div className={styles.loader}>
-                    <Loader color={'#60CEA7'}/>
-                </div>
-            )
-        }
-
-        return (
-            <LoaderButton className={styles.button_login} text="LOG IN"/>
-        );
-    }
-
     return (
         <>
             <div className={styles.title}>Welcome Back!</div>
@@ -62,7 +47,12 @@ export const Login = (props: Props) => {
                     errorMessage={errors?.password}
                     classNameGroup={styles.form_group}
                 />
-                {renderButton()}
+                <LoaderButton
+                    color={'#60CEA7'}
+                    className={styles.button_login}
+                    text="LOG IN"
+                    isLoading={isLoading}
+                />
             </form>
         </>
     );

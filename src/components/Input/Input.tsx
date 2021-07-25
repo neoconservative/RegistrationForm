@@ -13,7 +13,6 @@ interface Props {
 }
 
 export const Input = (props: Props) => {
-
     return (
         <div className={props.classNameGroup}>
             <input

@@ -7,7 +7,6 @@ import Loader from "react-spinners/FadeLoader";
 import {PHONE_NUMBER_MASK} from "../../constants/input";
 import {getUserProfile} from "../../store/asyncActions/user";
 import {addUserPhone, removeUserPhone} from "../../store/asyncActions/phone";
-import {LoaderButton} from "../../components/LoaderButton/LoaderButton";
 
 export const SuccessfulForm = () => {
     const [phone, setPhone] = useState('');
@@ -64,7 +63,6 @@ export const SuccessfulForm = () => {
 
     function renderLoader() {
         if(isLoading) {
-
             return (
                 <div className={styles.loader}>
                     <Loader color={'#60CEA7'}/>
@@ -77,7 +75,6 @@ export const SuccessfulForm = () => {
 
     function renderForm() {
         if (isShowPhoneForm && !isLoading) {
-
             return (
                 <>
                     <div className={styles.subtitle}>now enter your phone number</div>
@@ -94,7 +91,7 @@ export const SuccessfulForm = () => {
                                     placeholder={'+7 (***) *** ** **'}
                                     value={phone}
                                 />
-                                <LoaderButton className={styles.button_save} text="Save"/>
+                                <button type='submit' className={styles.button_save}>Save</button>
                                 {errors?.phoneNumber &&
                                 <div className={styles.help_block}>{errors.phoneNumber}</div>
                                 }

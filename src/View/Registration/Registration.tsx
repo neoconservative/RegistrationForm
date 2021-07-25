@@ -46,23 +46,6 @@ export class Registration extends React.Component<Props, State> {
         this.props.dispatch(registration(data, this.setErrorsState));
     };
 
-    renderButton = () => {
-        const {isLoading} = this.props;
-
-        if(isLoading) {
-
-            return (
-                <div className={styles.loader}>
-                    <Loader color={'#60CEA7'}/>
-                </div>
-            )
-        }
-
-        return (
-            <LoaderButton className={styles.button_getstarted} text="GET STARTED"/>
-        );
-    };
-
     render() {
         const {isLoading} = this.props;
         const {firstName, lastName, email, password, errors} = this.state;
@@ -125,7 +108,12 @@ export class Registration extends React.Component<Props, State> {
                         errorMessage={errors?.password}
                         classNameGroup={styles.form_group}
                     />
-                    {this.renderButton()}
+                    <LoaderButton
+                        color={'#60CEA7'}
+                        className={styles.button_getstarted}
+                        text="GET STARTED"
+                        isLoading={isLoading}
+                    />
                 </form>
             </>
         );

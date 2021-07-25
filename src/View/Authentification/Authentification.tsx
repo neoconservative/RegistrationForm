@@ -13,10 +13,8 @@ export const Authentification = () => {
 
     function renderView() {
         if (activeScreen === AUTHENTIFICATION_SCREENS.REGISTRATION) {
-
             return <Registration dispatch={dispatch} isLoading={isLoading}/>
             } else {
-
             return <Login isLoading={isLoading}/>
         }
     }
