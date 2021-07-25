@@ -1,7 +1,6 @@
 import {addOrUpdateUserAction} from "../userReducer";
 import {endLoadingAction, startLoadingAction} from "../loadingReducer";
-import {addPhone} from "../../services/addPhone";
-import {removePhone} from "../../services/removePhone";
+import {addPhone, removePhone} from "../../services/user";
 
 export const addUserPhone = (token, data, setErrors) => {
     return dispatch => {

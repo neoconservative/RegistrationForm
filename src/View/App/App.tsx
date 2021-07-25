@@ -9,22 +9,21 @@ import {SuccessfulForm} from "../SuccessfulForm/SuccessfulForm";
 import {getToken} from "../../helpers/token";
 
 export const App = () => {
-    // localStorage.removeItem('token');
     const token = getToken();
-    const isAuthenticated = token !== null;
+    const isAuthentificated = token !== null;
 
     return (
         <Router>
             <Switch>
                 <Route path="/login"
-                       render={() => !isAuthenticated ?
+                       render={() => !isAuthentificated ?
                            <Authentification />
                            :
                            <Redirect to="/"/>
                        }/>
                 <Route
                     path="/"
-                    render={() => isAuthenticated ?
+                    render={() => isAuthentificated ?
                         <SuccessfulForm /> :
                         <Redirect to="/login"/>
                     }/>

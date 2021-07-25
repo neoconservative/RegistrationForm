@@ -4,9 +4,10 @@ import styles from './SuccessfulForm.module.css'
 import {getToken} from "../../helpers/token";
 import {useDispatch, useSelector} from "react-redux";
 import Loader from "react-spinners/FadeLoader";
-import {PHONE_NUMBER_MASK} from "../../const/input";
+import {PHONE_NUMBER_MASK} from "../../constants/input";
 import {getUserProfile} from "../../store/asyncActions/user";
 import {addUserPhone, removeUserPhone} from "../../store/asyncActions/phone";
+import {LoaderButton} from "../../components/LoaderButton/LoaderButton";
 
 export const SuccessfulForm = () => {
     const [phone, setPhone] = useState('');
@@ -15,6 +16,9 @@ export const SuccessfulForm = () => {
     const dispatch = useDispatch();
     const isLoading = useSelector(state => state.loading.isLoading);
     const user = useSelector(state => state.user.user);
+    const {firstName, lastName, email, phoneNumber} = user;
+    const isExistPhone = typeof phoneNumber !== 'undefined' && phoneNumber !== '';
+    const isShowPhoneForm = !isExistPhone;
 
     useEffect(() => {
         dispatch(getUserProfile(token))
@@ -33,19 +37,8 @@ export const SuccessfulForm = () => {
 
     function getOnlyPhoneNumber() {
         const phoneNumber = phone.split('+7').join('8');
+
         return phoneNumber.replace(/[^0-9]/g, '');
-    }
-
-    function renderLoader() {
-        if(isLoading) {
-            return (
-                <div className={styles.loader}>
-                    <Loader color={'#60CEA7'}/>
-                </div>
-            )
-        }
-
-        return <></>
     }
 
     function getPhoneWithFirstEightFormatted(fullPhone) {
@@ -69,9 +62,51 @@ export const SuccessfulForm = () => {
         window.location.href='/'
     }
 
-    const {firstName, lastName, email, phoneNumber} = user;
-    const isExistPhone = typeof phoneNumber !== 'undefined' && phoneNumber !== '';
-    const isShowPhoneForm = !isExistPhone;
+    function renderLoader() {
+        if(isLoading) {
+
+            return (
+                <div className={styles.loader}>
+                    <Loader color={'#60CEA7'}/>
+                </div>
+            )
+        }
+
+        return <></>
+    }
+
+    function renderForm() {
+        if (isShowPhoneForm && !isLoading) {
+
+            return (
+                <>
+                    <div className={styles.subtitle}>now enter your phone number</div>
+                    <form className={styles.form} onSubmit={onSubmit}>
+                        <div className={styles.form_group}>
+                            <div>
+                                <MaskedInput
+                                    type="text"
+                                    className={styles.input}
+                                    onChange={event => {
+                                        setPhone(event.target.value)
+                                    }}
+                                    mask={PHONE_NUMBER_MASK}
+                                    placeholder={'+7 (***) *** ** **'}
+                                    value={phone}
+                                />
+                                <LoaderButton className={styles.button_save} text="Save"/>
+                                {errors?.phoneNumber &&
+                                <div className={styles.help_block}>{errors.phoneNumber}</div>
+                                }
+                            </div>
+                        </div>
+                    </form>
+                </>
+            )
+        }
+
+        return <></>
+    }
 
     return (
         <div className={styles.main}>
@@ -81,35 +116,7 @@ export const SuccessfulForm = () => {
             <div className={styles.main_block}>
                 <div className={styles.title}>Successfull!</div>
                 {renderLoader()}
-                {isShowPhoneForm && !isLoading && (
-                    <>
-                        <div className={styles.subtitle}>now enter your phone number</div>
-
-                        <form className={styles.form} onSubmit={onSubmit}>
-                            <div className={styles.form_group}>
-                                <div>
-                                    <MaskedInput
-                                        type="text"
-                                        className={styles.input}
-                                        onChange={event => {
-                                            setPhone(event.target.value)
-                                        }}
-                                        mask={PHONE_NUMBER_MASK}
-                                        placeholder={'+7 (***) *** ** **'}
-                                        value={phone}
-                                    />
-
-                                    <button type='submit' className={styles.button_save}>Save</button>
-                                    {errors?.phoneNumber &&
-                                    <div className={styles.help_block}>{errors.phoneNumber}</div>
-                                    }
-                                </div>
-
-                            </div>
-                        </form>
-                    </>
-                )}
-
+                {renderForm()}
                 <div className={styles.info_block}>
                     <div className={styles.infoText}>Welcome, {firstName} {lastName}</div>
                     <div className={styles.infoText}>Thank you for choosing us!</div>

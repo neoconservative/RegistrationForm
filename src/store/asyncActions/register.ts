@@ -1,6 +1,6 @@
 import {endLoadingAction, startLoadingAction} from "../loadingReducer";
 import {setToken} from "../../helpers/token";
-import {register} from "../../services/register";
+import {register} from "../../services/login";
 
 export const registration = (data, setErrorsState) => {
   return dispatch => {

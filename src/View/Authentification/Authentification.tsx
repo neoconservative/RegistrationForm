@@ -3,24 +3,30 @@ import {Login} from "../Login/Login";
 import styles from './Authentification.module.css'
 import {Registration} from "../Registration/Registration";
 import {useDispatch, useSelector} from "react-redux";
+import {AUTHENTIFICATION_SCREENS} from "../../constants/activeScreen";
+import {Tabs} from "../../components/Tabs/Tabs";
 
 export const Authentification = () => {
-    const [isSignUpView, setIsSignUpView] = useState(false);
+    const [activeScreen, setActiveScreen] = useState(AUTHENTIFICATION_SCREENS.LOGIN);
     const isLoading = useSelector(state => state.loading.isLoading);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+
     function renderView() {
-        if (isSignUpView) {
-            return (
-                <Registration dispatch={dispatch} isSignUpView={isSignUpView} isLoading={isLoading} setIsSignUpView={setIsSignUpView}/>
-            )} else {
-            return (
-                <Login isSignUpView={isSignUpView} isLoading={isLoading} setIsSignUpView={setIsSignUpView}/>
-            )
+        if (activeScreen === AUTHENTIFICATION_SCREENS.REGISTRATION) {
+
+            return <Registration dispatch={dispatch} isLoading={isLoading}/>
+            } else {
+
+            return <Login isLoading={isLoading}/>
         }
     }
+
     return (
         <div className={styles.main}>
             <div className={styles.main_block}>
+                <div className={styles.tabs_wrapper}>
+                    <Tabs activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
+                </div>
                 {renderView()}
             </div>
         </div>

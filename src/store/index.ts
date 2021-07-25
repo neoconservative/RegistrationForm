@@ -4,7 +4,6 @@ import {userReducer} from "./userReducer";
 import {composeWithDevTools} from 'redux-devtools-extension'
 import thunk from "redux-thunk";
 
-
 const rootReducer = combineReducers({
     loading: loadingReducer,
     user: userReducer

@@ -80,6 +80,7 @@
     line-height: 22px;
     padding: 6px 18px 7px 14px;
 }
+
 .button_save {
     background-color: var(--color-green);
     border-radius: 6px;

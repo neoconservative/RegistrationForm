@@ -1,7 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require("webpack");
-const autoprefixer = require("autoprefixer");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     mode: 'development',
@@ -42,29 +41,7 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     "css-loader",
-                    // {
-                    //     loader: "postcss-loader",
-                    //     options: {
-                    //         postcssOptions: {
-                    //             plugins: [
-                    //                 [
-                    //                     "autoprefixer",
-                    //                     {
-                    //                         // Options
-                    //                     },
-                    //                 ],
-                    //             ],
-                    //         },
-                    //     },
-                    //     },
-                    // {
-                    //     loader: 'postcss-loader',
-                        // options: {
-                        //     plugins: () => [require('autoprefixer')({
-                        //         'browsers': ['> 1%', 'last 2 versions']
-                        //     })],
-                        // }
-                    // },
+                    'postcss-loader'
                 ]
             }
         ]
@@ -74,5 +51,13 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: 'src/assets',
+                    to: 'assets'
+                }
+            ],
+        }),
     ],
 };

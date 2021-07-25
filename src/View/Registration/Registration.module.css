@@ -1,9 +1,3 @@
-.buttons_wrapper {
-    display: flex;
-    justify-content: center;
-    padding-top: 29px;
-    margin-bottom: 27px;
-}
 .title {
     font-weight: 400;
     font-size: 21px;
@@ -12,6 +6,7 @@
     text-align: center;
     margin-bottom: 27px;
 }
+
 .form {
     display: flex;
     flex-direction: column;
@@ -26,6 +21,7 @@
     display: flex;
     justify-content: center;
 }
+
 .input_name {
     width: 146px;
     height: 35px;
@@ -40,6 +36,7 @@
     padding: 6px 0 7px 14px;
     margin: 0 12px 0 12px;
 }
+
 .input_name::placeholder {
     color: var(--color-dark-blue);
     font-weight: 200;
@@ -62,6 +59,7 @@
     padding: 6px 0 7px 14px;
     margin: 0 12px 0 12px;
 }
+
 .input::placeholder {
     color: var(--color-dark-blue);
     font-weight: 200;
@@ -69,6 +67,7 @@
     line-height: 22px;
     padding: 6px 0 7px 14px;
 }
+
 .button_getstarted {
     background-color: var(--color-green);
     border-radius: 6px;
@@ -81,9 +80,11 @@
     border: none;
     margin: 21px 0 28px 0;
 }
+
 .button_getstarted:hover {
     background-color: var(--color-dark-green);
 }
+
 .button_getstarted:active {
     background-color: #49916d;
 }
