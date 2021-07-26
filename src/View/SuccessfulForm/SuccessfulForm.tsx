@@ -57,10 +57,10 @@ export const SuccessfulForm = () => {
         return conformedPhoneNumber.conformedValue
     }
 
-    function logOut() {
-        localStorage.removeItem('token');
-        window.location.href='/'
-    }
+    // function logOut() {
+    //     localStorage.removeItem('token');            // this helps with refactoring
+    //     window.location.href='/'
+    // }
 
     function renderLoader() {
         if(isLoading) {
@@ -108,9 +108,9 @@ export const SuccessfulForm = () => {
 
     return (
         <div className={commonStyles.main}>
-            <div className={styles.button_logout}>
-                <button onClick={()=> logOut()}>Log out</button>
-            </div>
+            {/*<div className={styles.button_logout}>*/}
+            {/*    <button onClick={()=> logOut()}>Log out</button>*/}
+            {/*</div>*/}
             <div className={commonStyles.main_block}>
                 <div className={styles.title}>Successfull!</div>
                 {renderLoader()}
