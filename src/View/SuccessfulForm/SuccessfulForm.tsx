@@ -93,7 +93,7 @@ export const SuccessfulForm = () => {
                                     value={phone}
                                 />
                                 {errors?.phoneNumber &&
-                                <div className={styles.error}>{errors.phoneNumber}</div>
+                                <div className={`${styles.error_wrapper} ${commonStyles.error}`}>{errors.phoneNumber}</div>
                                 }
                             </div>
                             <button type='submit' className={styles.button_save}>Save</button>

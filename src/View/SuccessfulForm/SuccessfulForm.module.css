@@ -22,10 +22,7 @@
     margin: 27px 0 21px 0;
 }
 
-.error {
-    display: block;
-    color: var(--color-red);
-    font-size: 14px;
+.error_wrapper {
     margin-top: 5px;
     max-width: 172px;
     width: 100%;

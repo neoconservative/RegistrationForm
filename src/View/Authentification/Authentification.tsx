@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import {Login} from "../Login/Login";
-import styles from './Authentification.module.css'
 import {Registration} from "../Registration/Registration";
 import {useDispatch, useSelector} from "react-redux";
 import {AUTHENTIFICATION_SCREENS} from "../../constants/activeScreen";

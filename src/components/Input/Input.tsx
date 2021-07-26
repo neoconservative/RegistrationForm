@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Input.module.css"
+import commonStyles from "../../common/commonStyle.module.css";
 
 interface Props {
     value?: string
@@ -24,7 +25,7 @@ export const Input = (props: Props) => {
                 type={props.type}
             />
             {props.errorMessage &&
-            <div className={styles.error}>{props.errorMessage}</div>
+            <div className={`${styles.error_wrapper} ${commonStyles.error}`}>{props.errorMessage}</div>
             }
         </div>
     );

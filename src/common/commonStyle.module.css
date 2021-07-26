@@ -80,3 +80,9 @@
 .button:active {
     background-color: #49916d;
 }
+
+.error {
+    display: block;
+    color: var(--color-red);
+    font-size: 14px;
+}

@@ -62,7 +62,7 @@ export class Registration extends React.Component<Props, State> {
                                 })}
                             disabled={isLoading}
                             value={firstName}
-                            className={styles.input_name}
+                            className={commonStyles.input}
                             placeholder='First Name'
                             type='text'
                             errorMessage={errors?.firstName}
@@ -75,7 +75,7 @@ export class Registration extends React.Component<Props, State> {
                                 })}
                             disabled={isLoading}
                             value={lastName}
-                            className={styles.input_name}
+                            className={commonStyles.input}
                             placeholder='Last Name'
                             type='text'
                             errorMessage={errors?.lastName}
