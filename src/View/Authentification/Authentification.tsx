@@ -5,6 +5,7 @@ import {Registration} from "../Registration/Registration";
 import {useDispatch, useSelector} from "react-redux";
 import {AUTHENTIFICATION_SCREENS} from "../../constants/activeScreen";
 import {Tabs} from "../Tabs/Tabs";
+import commonStyles from "../../common/commonStyle.module.css";
 
 export const Authentification = () => {
     const [activeScreen, setActiveScreen] = useState(AUTHENTIFICATION_SCREENS.LOGIN);
@@ -20,11 +21,9 @@ export const Authentification = () => {
     }
 
     return (
-        <div className={styles.main}>
-            <div className={styles.main_block}>
-                <div className={styles.tabs_wrapper}>
+        <div className={commonStyles.main}>
+            <div className={commonStyles.main_block}>
                     <Tabs activeScreen={activeScreen} setActiveScreen={setActiveScreen}/>
-                </div>
                 {renderView()}
             </div>
         </div>

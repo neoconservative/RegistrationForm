@@ -6,9 +6,12 @@
     --color-green: #60CEA7;
     --color-dark-green: #55a985;
     --color-dark-blue: #8A9DB6;
-    --color-red: #d60207;
+    --color-red: #f28588;
     --color-dark-grey: #4E5F75;
-    --color-dark: rgba(0, 0, 0, 0.3);;
+    --color-dark: rgba(0, 0, 0, 0.3);
+
+    --font-family-base: "Open Sans", 'sans-serif';
+    --font-family-secondary: "Roboto", 'sans-serif';
 }
 
 html, body {
@@ -17,7 +20,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    font-family: "Open Sans", 'sans-serif';
+    font-family: var(--font-family-base);
     font-style: normal;
     background-color: var(--color-light-grey);;
 }

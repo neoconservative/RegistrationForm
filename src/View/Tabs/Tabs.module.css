@@ -1,28 +1,27 @@
-.button_sigup {
-    width: 160px;
+.tabs_wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 326px;
+    padding-top: 29px;
+    margin-bottom: 27px;
+}
+
+.tab {
+    flex: 1;
     height: 28px;
     font-size: 14px;
     line-height: 16px;
-    font-weight: 400;
-    color: var(--color-dark);
-    border: none;
-    background-color: var(--color-light-green);
-    font-family: 'Roboto', 'sans-serif';
-    cursor: pointer;
-}
-.button_login {
-    width: 157px;
-    height: 28px;
-    font-size: 14px;
     font-weight: 300;
-    line-height: 16px;
     color: var(--color-dark);
     border: none;
     background-color: var(--color-light-green);
-    font-family: 'Roboto', 'sans-serif;';
+    font-family: var(--font-family-secondary);
     cursor: pointer;
 }
-.button_active {
+
+.active {
     background-color: var(--color-green);
     color: var(--color-white);
+    font-weight: 400;
 }

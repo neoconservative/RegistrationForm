@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styles from './Registration.module.css'
-import Loader from "react-spinners/FadeLoader";
+import commonStyles from "../../common/commonStyle.module.css";
 import {Input} from "../../components/Input/Input";
 import {registration} from "../../store/asyncActions/register";
 import {LoaderButton} from "../../components/LoaderButton/LoaderButton";
@@ -52,8 +52,8 @@ export class Registration extends React.Component<Props, State> {
 
         return (
             <>
-                <div className={styles.title}>Sing Up!</div>
-                <form className={styles.form} onSubmit={(e)=>this.onSubmitForm(e)}>
+                <h1 className={commonStyles.title}>Sing Up!</h1>
+                <form className={commonStyles.form} onSubmit={(e)=>this.onSubmitForm(e)}>
                     <div className={styles.input_name_block}>
                         <Input
                             onChange={(e) =>
@@ -66,7 +66,7 @@ export class Registration extends React.Component<Props, State> {
                             placeholder='First Name'
                             type='text'
                             errorMessage={errors?.firstName}
-                            classNameGroup={styles.form_group}
+                            classNameGroup={styles.form_name_group}
                         />
                         <Input
                             onChange={(e) =>
@@ -79,7 +79,7 @@ export class Registration extends React.Component<Props, State> {
                             placeholder='Last Name'
                             type='text'
                             errorMessage={errors?.lastName}
-                            classNameGroup={styles.form_group}
+                            classNameGroup={styles.form_name_group}
                         />
                     </div>
                     <Input
@@ -89,11 +89,11 @@ export class Registration extends React.Component<Props, State> {
                             })}
                         disabled={isLoading}
                         value={email}
-                        className={styles.input}
+                        className={commonStyles.input}
                         placeholder='Email Address'
                         type='email'
                         errorMessage={errors?.email}
-                        classNameGroup={styles.form_group}
+                        classNameGroup={commonStyles.form_group}
                     />
                     <Input
                         onChange={(e) =>
@@ -102,15 +102,15 @@ export class Registration extends React.Component<Props, State> {
                             })}
                         disabled={isLoading}
                         value={password}
-                        className={styles.input}
+                        className={commonStyles.input}
                         placeholder='Set A Password'
                         type='password'
                         errorMessage={errors?.password}
-                        classNameGroup={styles.form_group}
+                        classNameGroup={commonStyles.form_group}
                     />
                     <LoaderButton
                         color={'#60CEA7'}
-                        className={styles.button_getstarted}
+                        className={commonStyles.button}
                         text="GET STARTED"
                         isLoading={isLoading}
                     />

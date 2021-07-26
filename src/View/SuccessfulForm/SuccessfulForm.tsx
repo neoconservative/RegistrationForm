@@ -7,6 +7,7 @@ import Loader from "react-spinners/FadeLoader";
 import {PHONE_NUMBER_MASK} from "../../constants/input";
 import {getUserProfile} from "../../store/asyncActions/user";
 import {addUserPhone, removeUserPhone} from "../../store/asyncActions/phone";
+import commonStyles from "../../common/commonStyle.module.css";
 
 export const SuccessfulForm = () => {
     const [phone, setPhone] = useState('');
@@ -80,7 +81,7 @@ export const SuccessfulForm = () => {
                     <div className={styles.subtitle}>now enter your phone number</div>
                     <form className={styles.form} onSubmit={onSubmit}>
                         <div className={styles.form_group}>
-                            <div>
+                            <div className={styles.input_block}>
                                 <MaskedInput
                                     type="text"
                                     className={styles.input}
@@ -91,11 +92,11 @@ export const SuccessfulForm = () => {
                                     placeholder={'+7 (***) *** ** **'}
                                     value={phone}
                                 />
-                                <button type='submit' className={styles.button_save}>Save</button>
                                 {errors?.phoneNumber &&
-                                <div className={styles.help_block}>{errors.phoneNumber}</div>
+                                <div className={styles.error}>{errors.phoneNumber}</div>
                                 }
                             </div>
+                            <button type='submit' className={styles.button_save}>Save</button>
                         </div>
                     </form>
                 </>
@@ -106,11 +107,11 @@ export const SuccessfulForm = () => {
     }
 
     return (
-        <div className={styles.main}>
+        <div className={commonStyles.main}>
             <div className={styles.button_logout}>
                 <button onClick={()=> logOut()}>Log out</button>
             </div>
-            <div className={styles.main_block}>
+            <div className={commonStyles.main_block}>
                 <div className={styles.title}>Successfull!</div>
                 {renderLoader()}
                 {renderForm()}

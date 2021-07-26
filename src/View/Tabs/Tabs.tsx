@@ -9,19 +9,19 @@ interface Props {
 
 export const Tabs = (props: Props) => {
     return (
-        <>
+        <div className={styles.tabs_wrapper}>
             <button
                 onClick={()=> props.setActiveScreen(AUTHENTIFICATION_SCREENS.REGISTRATION)}
-                className={`${styles.button_sigup} ${props.activeScreen === AUTHENTIFICATION_SCREENS.REGISTRATION ? styles.button_active : ''}`}
+                className={`${styles.tab} ${props.activeScreen === AUTHENTIFICATION_SCREENS.REGISTRATION ? styles.active : ''}`}
             >
                 Sing Up
             </button>
             <button
                 onClick={()=> props.setActiveScreen(AUTHENTIFICATION_SCREENS.LOGIN)}
-                className={`${styles.button_login} ${props.activeScreen === AUTHENTIFICATION_SCREENS.LOGIN ? styles.button_active : ''}`}
+                className={`${styles.tab} ${props.activeScreen === AUTHENTIFICATION_SCREENS.LOGIN ? styles.active : ''}`}
             >
                 Log In
             </button>
-        </>
+        </div>
     );
 };

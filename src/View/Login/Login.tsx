@@ -1,6 +1,5 @@
 import React, {useState} from "react";
-import styles from './Login.module.css'
-import Loader from "react-spinners/FadeLoader";
+import commonStyles from '../../common/commonStyle.module.css'
 import {useDispatch} from "react-redux";
 import {Input} from "../../components/Input/Input";
 import {logIn} from "../../store/asyncActions/login";
@@ -25,31 +24,31 @@ export const Login = (props: Props) => {
 
     return (
         <>
-            <div className={styles.title}>Welcome Back!</div>
-            <form className={styles.form} onSubmit={(e)=>onSubmitForm(e)}>
+            <h1 className={commonStyles.title}>Welcome Back!</h1>
+            <form className={commonStyles.form} onSubmit={(e)=>onSubmitForm(e)}>
                 <Input
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading}
                     value={email}
-                    className={styles.input}
+                    className={commonStyles.input}
                     placeholder='Email Address'
                     type='email'
                     errorMessage={errors?.email}
-                    classNameGroup={styles.form_group}
+                    classNameGroup={commonStyles.form_group}
                 />
                 <Input
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={isLoading}
                     value={password}
-                    className={styles.input}
+                    className={commonStyles.input}
                     placeholder='Set A Password'
                     type='password'
                     errorMessage={errors?.password}
-                    classNameGroup={styles.form_group}
+                    classNameGroup={commonStyles.form_group}
                 />
                 <LoaderButton
                     color={'#60CEA7'}
-                    className={styles.button_login}
+                    className={commonStyles.button}
                     text="LOG IN"
                     isLoading={isLoading}
                 />
